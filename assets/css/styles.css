@@ -12,6 +12,10 @@ body{
     border: solid;
     border-color: #d63384;
 }
+.price-btn{
+    display: flex;
+    justify-content: space-around;
+}
 .btn{
     background-color: #d63384;
 }
@@ -46,6 +50,7 @@ label>.bi{
     background-color: rgb(0, 0, 0, 0.5);
     border-color: #d63384;
     color: aliceblue;
+    margin: 2vw;
 }
 .c-input{
     border-radius: 12px;
@@ -65,6 +70,7 @@ table{
     text-align: center;
     background-color: rgb(0, 0, 0, 0.5);
     width: 100%;
+    margin: 2vw;
 }
 .t-title{
     background-color: #d63384;

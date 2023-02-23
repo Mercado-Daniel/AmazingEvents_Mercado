@@ -31,116 +31,130 @@
     <main>
         <section class="d-flex align-items-center flex-column">
             <h1>Upcoming Events</h1>
-            <article>
-                <div id="carrusel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active"  data-bs-interval="2500">
-                            <img src="./assets/images/6354885eefd6b_450.jpg" class="d-block img-car" alt="...">
-                        </div>
-                        <div class="carousel-item"  data-bs-interval="2500">
-                            <img src="./assets/images/atletismo-correr-deportes-marathon-wallpaper-preview.jpg" class="d-block img-car" alt="...">
-                        </div>
-                        <div class="carousel-item"  data-bs-interval="2500">
-                            <img src="./assets/images/meat-scrambled-eggs-vegetables-meals-burger-hd-wallpaper-preview.jpg" class="d-block img-car" alt="...">
-                        </div>
+            <div id="carrusel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active"  data-bs-interval="2500">
+                        <img src="./assets/images/6354885eefd6b_450.jpg" class="d-block img-car" alt="...">
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carrusel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                    </button>
+                    <div class="carousel-item"  data-bs-interval="2500">
+                        <img src="./assets/images/atletismo-correr-deportes-marathon-wallpaper-preview.jpg" class="d-block img-car" alt="...">
+                    </div>
+                    <div class="carousel-item"  data-bs-interval="2500">
+                        <img src="./assets/images/meat-scrambled-eggs-vegetables-meals-burger-hd-wallpaper-preview.jpg" class="d-block img-car" alt="...">
+                    </div>
                 </div>
-            </article>
-            <article>
-                <form class="sear">
-                    <label >
-                        <input type="checkbox" name="categiry" value="">
-                        Category
-                    </label>
-                    <label >
-                        <input type="checkbox" name="categiry" value="">
-                        Category
-                    </label>
-                    <label >
-                        <input type="checkbox" name="categiry" value="">
-                        Category
-                    </label>
-                    <label >
-                        <input type="checkbox" name="categiry" value="">
-                        Category
-                    </label>
-                    <label >
-                        <input type="checkbox" name="categiry" value="">
-                        Category
-                    </label>
-                    <label>
-                        <input type="search">
-                        <i class="bi bi-search"></i>
-                    </label>
-                </form>
-            </article>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carrusel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <form class="sear">
+                <label >
+                    <input type="checkbox" name="categiry" value="">
+                    Category
+                </label>
+                <label >
+                    <input type="checkbox" name="categiry" value="">
+                    Category
+                </label>
+                <label >
+                    <input type="checkbox" name="categiry" value="">
+                    Category
+                </label>
+                <label >
+                    <input type="checkbox" name="categiry" value="">
+                    Category
+                </label>
+                <label >
+                    <input type="checkbox" name="categiry" value="">
+                    Category
+                </label>
+                <label>
+                    <input type="search">
+                    <i class="bi bi-search"></i>
+                </label>
+            </form>
             <div class="container ">
                 <div class="row">
-                    <article class="col-lg-4">
+                    <article class="col-lg-4 col-md-6">
                         <div class="card">
                             <img src="./assets/images/museum_tour.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn">Go somewhere</a>
+                                <div class="price-btn">
+                                    <a href="#" class="btn">Go somewhere</a>
+                                    <p>price: $00000</p>
+                                </div>
                             </div>
                         </div>
                     </article>
-                    <article class="col-lg-4">
+                    <article class="col-lg-4 col-md-6">
                         <div class="card">
                             <img src="./assets/images/food_fair.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn">Go somewhere</a>
+                                <div class="price-btn">
+                                    <a href="#" class="btn">Go somewhere</a>
+                                    <p>price: $00000</p>
+                                </div>
                             </div>
                         </div>
                     </article>
-                    <article class="col-lg-4">
+                    <article class="col-lg-4 col-md-6">
                         <div class="card">
                             <img src="./assets/images/music_concert.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn">Go somewhere</a>
+                                <div class="price-btn">
+                                    <a href="#" class="btn">Go somewhere</a>
+                                    <p>price: $00000</p>
+                                </div>
                             </div>
                         </div>
                     </article>
-                    <article class="col-lg-4">
+                    <article class="col-lg-4 col-md-6">
                         <div class="card">
                             <img src="./assets/images/marathon.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn">Go somewhere</a>
+                                <div class="price-btn">
+                                    <a href="#" class="btn">Go somewhere</a>
+                                    <p>price: $00000</p>
+                                </div>
                             </div>
                         </div>
                     </article>
-                    <article class="col-lg-4">
+                    <article class="col-lg-4 col-md-6">
                         <div class="card">
                             <img src="./assets/images/costume_party.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn">Go somewhere</a>
+                                <div class="price-btn">
+                                    <a href="#" class="btn">Go somewhere</a>
+                                    <p>price: $00000</p>
+                                </div>
                             </div>
                         </div>
                     </article>
-                    <article class="col-lg-4">
+                    <article class="col-lg-4 col-md-6">
                         <div class="card">
                             <img src="./assets/images/cinema.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn ">Go somewhere</a>
+                                <div class="price-btn">
+                                    <a href="#" class="btn">Go somewhere</a>
+                                    <p>price: $00000</p>
+                                </div>
                             </div>
                         </div>
                     </article>
