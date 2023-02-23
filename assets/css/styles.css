@@ -1,0 +1,102 @@
+body{
+    display: block;
+    width: 100%;
+}
+.img-car{
+    width: 90vw;
+    height: 45vh;
+}
+.card{
+    margin: 12px;
+    background-color: rgb(0, 0, 0, 0.5);
+    border: solid;
+    border-color: #d63384;
+}
+.btn{
+    background-color: #d63384;
+}
+h1{
+    border: solid;
+    width: 100%;
+    text-align: center;
+    background-color: #d63384;
+}
+.sear{
+    margin: 2vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.sear>label{
+    margin: 2vw;
+    
+}
+label>.bi{
+    color: #d63384;
+    font-size: 25px;
+    margin-left: 1vw;
+}
+#f-contact{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: solid;
+    border-radius: 12px;
+    padding: 3vw;
+    background-color: rgb(0, 0, 0, 0.5);
+    border-color: #d63384;
+    color: aliceblue;
+}
+.c-input{
+    border-radius: 12px;
+    background-color: rgb(0, 0, 0, 0);
+    border-color: #d63384;
+    color: aliceblue;
+    width: 65vw;
+}
+textarea{
+    border-radius: 12px;
+    background-color: rgb(0, 0, 0, 0);
+    border-color: #d63384;
+    color: aliceblue;
+    width: 65vw;
+}
+table{
+    text-align: center;
+    background-color: rgb(0, 0, 0, 0.5);
+    width: 100%;
+}
+.t-title{
+    background-color: #d63384;
+}
+th{
+    border: solid;
+}
+td{
+    border: solid;
+}
+a>.bi{
+    font-size: 12vw;
+    margin-left: 10vw;
+    color: #d63384;
+}
+.nav-link:hover{
+    color: #d63384;
+}
+footer{
+    width: 100%;
+}
+@media only screen and (max-width:1000px) {
+    .img-nav{
+        width: 50%;
+    }
+}
+@media only screen and (min-width:1000px){
+    a>.bi{
+        font-size: 3vw;
+    }
+    #navbarNavAltMarkup{
+        display: flex;
+        justify-content: end;
+    }
+}
