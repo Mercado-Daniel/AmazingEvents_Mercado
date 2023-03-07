@@ -37,7 +37,7 @@ main{
     border-radius: 12px;
 }
 .card-img-top{
-    height: 250px;
+    height: 45%;
 }
 .card-body{
     display: flex;
@@ -143,4 +143,5 @@ footer{
         display: flex;
         justify-content: end;
     }
+    
 }
