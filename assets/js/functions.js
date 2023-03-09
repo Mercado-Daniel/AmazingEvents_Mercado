@@ -1,11 +1,11 @@
-const convertDate = function(date){
+const convertDate = (date) =>{
     return {
     year: parseInt(date.substring(0,4)),
     month:parseInt(date.substring(5,7)),
     day:parseInt(date.substring(8,10))
     };
 }
-const compareDate = function(date1, date2){
+const compareDate = (date1, date2) =>{
     if(date1.year == date2.year){
         if(date1.month == date2.month){
             if(date1.day == date2.day){
@@ -26,7 +26,8 @@ const compareDate = function(date1, date2){
     return false;
 }
 
-const cardIndividual = function(events){
+
+const cardIndividual = (events) => {
     return`
     <article class="col-lg-4 col-md-6">
         <div class="card">
