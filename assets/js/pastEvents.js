@@ -1,4 +1,7 @@
 import data from "./amazing.js";
-import {createCards} from "./functions.js";
+import {createCards, filterDate, showCards, convertDate} from "./functions.js";
 
-createCards(data , "past");
+let current = convertDate(data.currentDate);
+let pastCards = filterDate(current, data, "past");
+let cards = createCards(pastCards);
+showCards(cards);

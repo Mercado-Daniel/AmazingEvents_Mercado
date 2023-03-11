@@ -1,4 +1,5 @@
 import data from "./amazing.js";
-import {createCards} from "./functions.js";
+import {createCards , filterCategory, showCards} from "./functions.js";
 
-createCards(data , "all");
+let cards = createCards(data.events);
+showCards(cards);
