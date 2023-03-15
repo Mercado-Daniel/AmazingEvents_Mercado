@@ -170,6 +170,6 @@ const data = {
         "estimate":9000,
         "price":250
       }
-    ]
+    ],
   };
 export default data;

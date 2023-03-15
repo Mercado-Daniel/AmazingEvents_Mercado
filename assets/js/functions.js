@@ -31,7 +31,7 @@ const cardIndividual = (events) => {//recibe un objeto events
     return`
     <article class="col-lg-4 col-md-6">
         <div class="card">
-            <img src="${events.image}" class="card-img-top" alt="..."></img>
+            <img src="${events.image}" class="card-img-top object-fit-cover" alt="..."></img>
             <div class="card-body">
                 <h5 class="card-title">${events.name}</h5>
                 <p class="card-text">${events.description}</p>
@@ -68,62 +68,60 @@ const filterDate = (current, data, time) => {//recibe la currentdate como objeto
     
 }
 
-function superFilter(data, input){
-    let primerFiltro = filtrarPorTexto(data,input.value);
-    let segundoFiltro = filtrarPorCategory(primerFiltro);
-    if(segundoFiltro.length > 0){
-        let cards = createCards(segundoFiltro);
+function doubleFilter(data, input){
+    let firstFilter = data.filter(ev3nt => ev3nt.name.toLowerCase().includes(input.value.toLowerCase()));
+    let secondFilter = filterForCategory(firstFilter);
+    if(secondFilter.length > 0){
+        let cards = createCards(secondFilter);
         showCards(cards);
     }else{
         const no = document.getElementById('cards');
-        no.innerHTML = `<h2>No Se encontro ${input.value}</h2>`
+        no.innerHTML = `
+        <article class="col-lg-4 col-md-6">
+            <h2>It was not found ${input.value}</h2>
+        </article>
+        `;
     }
 }
 
 function createCheckBoxes(array, contenedorCheck){
     let arrayCategorys = array.map(ev3nt => ev3nt.category);
     let setCategory = new Set(arrayCategorys);
-    let arrayChecks = Array.from(setCategory);
     let checkboxes = '';
-    arrayChecks.forEach(category => {
-        checkboxes += `<div class="form-check form-switch">
-        <input type="checkbox" role="switch" id="${category}" value="${category}">
+    setCategory.forEach(category => {
+        checkboxes += `<div class="form-check">
+        <input type="checkbox" id="${category}" value="${category}">
         <label  for="${category}">${category}</label>
         </div>`
     });
     contenedorCheck.innerHTML = checkboxes;
 }
 
-function filtrarPorTexto(array,texto){
-    let arrayFiltrado = array.filter(elemento => elemento.name.toLowerCase().includes(texto.toLowerCase()));
-        return arrayFiltrado;
-}
 
-function filtrarPorCategory(array){
+function filterForCategory(array){
     let checkboxes = document.querySelectorAll("input[type='checkbox']");
-    let arrayChecks = Array.from(checkboxes);
-    let arrayChecksChecked = arrayChecks.filter(check => check.checked);
-    let arrayChecksCheckedValues = arrayChecksChecked.map(checkChecked => checkChecked.value);
-    let arrayFilter = array.filter(element => arrayChecksCheckedValues.includes(element.category));
-    if(arrayChecksChecked.length > 0){
+    let arrayChecks = Array
+        .from(checkboxes)
+        .filter(check => check.checked)
+        .map(checkChecked => checkChecked.value);
+    let arrayFilter = array.filter(element => arrayChecks.includes(element.category));
+    if(arrayChecks.length > 0){
         return arrayFilter;
     }
     return array;
 }
 
-function createrEvery(events){
+function gets(events){
     const contentCheck = document.getElementById('cater');
     const input = document.querySelector('input');
-    
     input.addEventListener('input', function() {
-        superFilter(events, input);
+        doubleFilter(events, input);
     });
-    
     contentCheck.addEventListener('change',function() {
-        superFilter(events, input);
+        doubleFilter(events, input);
     });
     return contentCheck;
 }
 
 
-export {createCards, showCards, compareDate, convertDate, filterDate, createCheckBoxes, createrEvery};
+export {createCards, showCards, compareDate, convertDate, filterDate, createCheckBoxes, gets};
