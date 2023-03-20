@@ -1,9 +1,15 @@
 import data from "./amazing.js";
-import {createCards, filterDate, showCards, convertDate, createCheckBoxes, gets} from "./functions.js";
+import {createCards, showCards,futureEvent, createCheckBoxes, generateListener} from "./functions.js";
 
-let current = convertDate(data.currentDate);
-let futureCards = filterDate(current, data, "future");
+let currentDate = data.currentDate
+let contentCheck = document.getElementById('cater');
+let input = document.querySelector('input');
+
+let futureCards = futureEvent(data.events, currentDate);
 let cards = createCards(futureCards);
 showCards(cards);
 
-createCheckBoxes(futureCards,gets(futureCards) );
+
+
+generateListener(futureCards, contentCheck, input);
+createCheckBoxes(futureCards,contentCheck);

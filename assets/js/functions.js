@@ -1,33 +1,11 @@
-const convertDate = (date) => {
-    return {
-    year: parseInt(date.substring(0,4)),
-    month:parseInt(date.substring(5,7)),
-    day:parseInt(date.substring(8,10))
-    };
-}
 
-const compareDate = (date1, date2) =>{
-    if(date1.year == date2.year){
-        if(date1.month == date2.month){
-            if(date1.day == date2.day){
-                return true;
-            }
-            if(date1.day > date2.day){
-                return true;
-            }
-        }
-        if(date1.month > date2.month){
-            return true;
-        }
-        return false;
-    }
-    if(date1.year > date2.year){
-        return true;
-    }
-    return false;
+function pastEvent(array, currentDate){
+    return array.filter(item => item.date < currentDate);
 }
-
-const cardIndividual = (events) => {//recibe un objeto events
+function futureEvent(array, currentDate){
+    return array.filter(item => item.date > currentDate);
+}
+const cardIndividual = (events) => {//recibe un objeto events y devuelve una card en formato string
     return`
     <article class="col-lg-4 col-md-6">
         <div class="card">
@@ -47,25 +25,14 @@ const cardIndividual = (events) => {//recibe un objeto events
 let createCards = (events) => {//recibe un objeto events
     let cards = "";
     events.forEach(event => {
-        cards += cardIndividual(event);
-        //cards.push(cardIndividual(event));
+        cards += cardIndividual(event);//junto todas las cartas
     });
     return cards;
 }
 
 let showCards = (cardsFilters) => {//recibe un arry de strings
     const articleElement = document.getElementById('cards');
-    articleElement.innerHTML = cardsFilters;// join ('')hace que los distintos string del array se comporten como un solo string
-}
-
-const filterDate = (current, data, time) => {//recibe la currentdate como objeto de ints, el objeto data y la indicacion de tiempo en un string pasr o future
-    if(time == "future"){
-        return data.events.filter(events => compareDate(convertDate(events.date), current) === true);
-    }
-    if(time == "past"){
-        return data.events.filter(events => compareDate(current, convertDate(events.date)) === true);
-    }
-    
+    articleElement.innerHTML = cardsFilters;
 }
 
 function doubleFilter(data, input){
@@ -111,17 +78,14 @@ function filterForCategory(array){
     return array;
 }
 
-function gets(events){
-    const contentCheck = document.getElementById('cater');
-    const input = document.querySelector('input');
+function generateListener(events, contentCheck, input){//genera los eventos indicandole el evento a cumplir
     input.addEventListener('input', function() {
         doubleFilter(events, input);
     });
     contentCheck.addEventListener('change',function() {
         doubleFilter(events, input);
     });
-    return contentCheck;
 }
 
 
-export {createCards, showCards, compareDate, convertDate, filterDate, createCheckBoxes, gets};
+export {createCards, showCards,pastEvent,futureEvent, createCheckBoxes, generateListener};

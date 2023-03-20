@@ -1,9 +1,14 @@
 import data from "./amazing.js";
-import {createCards, filterDate, showCards, convertDate, createCheckBoxes, gets} from "./functions.js";
+import {createCards, showCards, pastEvent, createCheckBoxes, generateListener} from "./functions.js";
+let currentDate = data.currentDate
+let contentCheck = document.getElementById('cater');
+let input = document.querySelector('input');
 
-let current = convertDate(data.currentDate);
-let pastCards = filterDate(current, data, "past");
+let pastCards = pastEvent(data.events, currentDate);
 let cards = createCards(pastCards);
 showCards(cards);
 
-createCheckBoxes(pastCards,gets(pastCards));
+
+
+generateListener(pastCards, contentCheck, input);
+createCheckBoxes(pastCards,contentCheck);
