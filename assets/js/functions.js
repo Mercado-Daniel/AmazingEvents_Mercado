@@ -1,8 +1,8 @@
 
-function pastEvent(array, currentDate){
+function pastEvent(array, currentDate){//me rotorna un arrya con los eventos que tienen una fecha  inferior a currentdate
     return array.filter(item => item.date < currentDate);
 }
-function futureEvent(array, currentDate){
+function futureEvent(array, currentDate){//me rotorna un arrya con los eventos que tienen una fecha  superior a currentdate
     return array.filter(item => item.date > currentDate);
 }
 const cardIndividual = (events) => {//recibe un objeto events y devuelve una card en formato string

@@ -1,12 +1,20 @@
-import data from "./amazing.js";
+
 
 const eventContainer = document.getElementById ('eventDetails');
 
 const queryString = location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
+async function create(){
+    await fetch("/assets/js/data.json")
+        .then(response => response.json())
+        .then(data =>{
+            const ev3nt = data.events.find(even => even._id == id);
+            paintDetails(ev3nt, eventContainer);
+    });
+}
+create();
 
-const ev3nt = data.events.find(even => even._id == id);
 function paintDetails(ev3nt, eventContainer){
     let card = [];
     card = `
@@ -27,4 +35,3 @@ function paintDetails(ev3nt, eventContainer){
         </div>`;
     eventContainer.innerHTML = card;
 }
-paintDetails(ev3nt, eventContainer);
