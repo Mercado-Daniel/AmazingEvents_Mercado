@@ -9,18 +9,14 @@ async function create(){
     await fetch("/assets/js/data.json")
         .then(response => response.json())
         .then(data => {
-            let events = [];
             let currentDate = data.currentDate;
-            data.events.forEach(ev3nt => {
-                events.push(ev3nt);
-            });
-            percentage(events);
-            stats(events);
-            let futureve = futureEvent(events, currentDate);
+            percentage(data.events);
+            stats(data.events);
+            let futureve = futureEvent(data.events, currentDate);
             categoryStats(futureve, upcomingTable);
-            let pasteve = pastEvent(events, currentDate);
+            let pasteve = pastEvent(data.events, currentDate);
             categoryStats(pasteve, pastTable);
-            drawStats(stats(events), staticTable );
+            drawStats(stats(data.events), staticTable );
         });
         
 }
@@ -63,12 +59,12 @@ function percentage(events){//le asigna porcentage a los objetos events
 }
 
 function maxPercentange(events){
-    let maxPercent = events.sort((a, b) => b.percentange - a.percentange)[0].name;//ordena de mayor a menor y devuelve el primer elemento
+    let maxPercent = events.sort((a, b) => b.percentange - a.percentange)[0].name;//ordena de mayor a menor los porcentages de asistencia o estimacion y devuelve el primer elemento
     return maxPercent;
 }
 
 function minPercentange(events){
-    let minPercent = events.sort((a, b) => a.percentange - b.percentange)[0].name;//ordena de menor a mayor y devuelve el primer elemento
+    let minPercent = events.sort((a, b) => a.percentange - b.percentange)[0].name;//ordena de menor a mayor de asistencia o estimacion y devuelve el primer elemento
     return minPercent;
 }
 
