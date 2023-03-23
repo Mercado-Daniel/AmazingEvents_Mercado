@@ -37,7 +37,7 @@ function categoryStats (events, table) {
     let por = 0;
     for(let i in cat) {
         let tableArray = [];
-        gan = ganaciasCategory(events, cat[i]);
+        gan = revenuesCategory(events, cat[i]);
         por = percentangeCategoryAtendance(events, cat[i]);
         tableArray.push(cat[i]);
         tableArray.push(gan);
@@ -75,34 +75,34 @@ function categoryName(events){
     return arrayCategoryFilter;
 }
 
-function ganaciasCategory(events, category) {
+function revenuesCategory(events, category) {
     let categoryXEvent = events
         .filter(ev3nt => ev3nt.category === category);
     let ganancias = 0;
     categoryXEvent.forEach(ev3nt =>{
         ganancias += ev3nt.estimate ? (ev3nt.estimate * ev3nt.price) : (ev3nt.assistance * ev3nt.price);
     });
-    return ganancias;
+    return "$" + ganancias;
 }
 
 function percentangeCategoryAtendance(events, category){
     let categoryXEvent = events
         .filter(ev3nt => ev3nt.category === category);
-    let sumEstimate = 0;
+    let sum = 0;
     let sumCapacity = 0;
     categoryXEvent.forEach(ev3nt => {
-        sumEstimate += ev3nt.estimate ? ev3nt.estimate : ev3nt.assistance;
+        sum += ev3nt.estimate ? ev3nt.estimate : ev3nt.assistance;
         sumCapacity += ev3nt.capacity;
     });
-    let porcentage = ((sumEstimate / sumCapacity)*100).toFixed(2);
-    return porcentage + "%";
+    let percentage = ((sum / sumCapacity)*100).toFixed(2);
+    return percentage + "%";
 }
 function drawStats(data, container){//dibuja una fila en el container con los elementos de un array
     let tr = document.createElement("tr");//creo la fila
     for (let i in data){
         let td = document.createElement("td");//creo las columnas
         td.innerText = data[i];//guardo el contenido de la posicion del array en la columna
-        tr.appendChild(td);//le asigno la columna al renglon
+        tr.appendChild(td);//le asigno la columna a la fila
     }
     container.appendChild(tr);//asigno la fila al cuerpo de la tabla
 }

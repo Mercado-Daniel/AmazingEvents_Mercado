@@ -102,6 +102,7 @@ label>.bi{
     background-color: rgb(0, 0, 0, 0.5);
     border-color: #d63384;
     color: aliceblue;
+    margin-bottom: 2vw;
 }
 .c-input{
     border-radius: 12px;
@@ -122,6 +123,7 @@ table{
     background-color: rgb(0, 0, 0, 0.5);
     width: 100%;
     margin-top: 2vw;
+    margin-bottom: 2vw;
 }
 .t-title{
     background-color: #d63384;
